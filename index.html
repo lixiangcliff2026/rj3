@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>24节气日出日落时长统计（带核查）</title>
+    <title>24节气日出日落时长统计（小寒大寒在前）</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -185,7 +185,7 @@
 </head>
 
 <body>
-    <h1 class="title">24节气日出日落时长统计（带核查）</h1>
+    <h1 class="title">24节气日出日落时长统计</h1>
 
     <div class="container">
         <h3 class="table-title">数据录入区</h3>
@@ -213,156 +213,156 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>立春</td>
+                    <td>小寒</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,0)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>雨水</td>
+                    <td>大寒</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,1)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>惊蛰</td>
+                    <td>立春</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,2)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>春分</td>
+                    <td>雨水</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,3)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>清明</td>
+                    <td>惊蛰</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,4)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>谷雨</td>
+                    <td>春分</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,5)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>立夏</td>
+                    <td>清明</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,6)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>小满</td>
+                    <td>谷雨</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,7)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>芒种</td>
+                    <td>立夏</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,8)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>夏至</td>
+                    <td>小满</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,9)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>小暑</td>
+                    <td>芒种</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,10)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>大暑</td>
+                    <td>夏至</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,11)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>立秋</td>
+                    <td>小暑</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,12)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>处暑</td>
+                    <td>大暑</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,13)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>白露</td>
+                    <td>立秋</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,14)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>秋分</td>
+                    <td>处暑</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,15)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>寒露</td>
+                    <td>白露</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,16)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>霜降</td>
+                    <td>秋分</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,17)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>立冬</td>
+                    <td>寒露</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,18)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>小雪</td>
+                    <td>霜降</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,19)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>大雪</td>
+                    <td>立冬</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,20)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>冬至</td>
+                    <td>小雪</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,21)">核查无误</button></td>
                 </tr>
                 <tr>
-                    <td>小寒</td>
+                    <td>大雪</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
                     <td><button class="check-btn" onclick="check(this,22)">核查无误</button></td>
                     <td class="split"></td>
-                    <td>大寒</td>
+                    <td>冬至</td>
                     <td><input class="rh"></td><td><input class="rm"></td>
                     <td><input class="sh"></td><td><input class="sm"></td>
                     <td><input class="th" disabled></td><td><input class="tm" disabled></td>
@@ -403,29 +403,46 @@
     </div>
 
     <script>
-        const labels = ["立春","雨水","惊蛰","春分","清明","谷雨","立夏","小满","芒种","夏至","小暑","大暑",
-                        "立秋","处暑","白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至","小寒","大寒"];
+        // 标签顺序：小寒、大寒开头
+        const labels = [
+            "小寒","大寒","立春","雨水","惊蛰","春分","清明","谷雨",
+            "立夏","小满","芒种","夏至","小暑","大暑","立秋","处暑",
+            "白露","秋分","寒露","霜降","立冬","小雪","大雪","冬至"
+        ];
+        
         let chart = null;
         let currentType = 'scatter';
         let show = { rise: false, set: false, time: false };
 
-        // 正确标准答案
+        // 标准数据顺序与 labels 对应
         const standardData = [
-            { rise: "06:59", set: "18:23" }, { rise: "06:49", set: "18:33" },
-            { rise: "06:40", set: "18:43" }, { rise: "06:28", set: "18:51" },
-            { rise: "06:15", set: "18:59" }, { rise: "06:05", set: "19:07" },
-            { rise: "06:00", set: "19:13" }, { rise: "05:57", set: "19:18" },
-            { rise: "05:57", set: "19:22" }, { rise: "05:59", set: "19:23" },
-            { rise: "06:03", set: "19:20" }, { rise: "06:09", set: "19:13" },
-            { rise: "06:15", set: "19:03" }, { rise: "06:21", set: "18:51" },
-            { rise: "06:27", set: "18:38" }, { rise: "06:33", set: "18:24" },
-            { rise: "06:39", set: "18:10" }, { rise: "06:45", set: "17:58" },
-            { rise: "06:50", set: "17:49" }, { rise: "06:55", set: "17:44" },
-            { rise: "07:00", set: "17:43" }, { rise: "07:04", set: "17:44" },
-            { rise: "07:03", set: "18:11" }, { rise: "07:05", set: "18:16" }
+            { rise: "07:03", set: "18:11" }, // 小寒
+            { rise: "07:05", set: "18:16" }, // 大寒
+            { rise: "06:59", set: "18:23" }, // 立春
+            { rise: "06:49", set: "18:33" }, // 雨水
+            { rise: "06:40", set: "18:43" }, // 惊蛰
+            { rise: "06:28", set: "18:51" }, // 春分
+            { rise: "06:15", set: "18:59" }, // 清明
+            { rise: "06:05", set: "19:07" }, // 谷雨
+            { rise: "06:00", set: "19:13" }, // 立夏
+            { rise: "05:57", set: "19:18" }, // 小满
+            { rise: "05:57", set: "19:22" }, // 芒种
+            { rise: "05:59", set: "19:23" }, // 夏至
+            { rise: "06:03", set: "19:20" }, // 小暑
+            { rise: "06:09", set: "19:13" }, // 大暑
+            { rise: "06:15", set: "19:03" }, // 立秋
+            { rise: "06:21", set: "18:51" }, // 处暑
+            { rise: "06:27", set: "18:38" }, // 白露
+            { rise: "06:33", set: "18:24" }, // 秋分
+            { rise: "06:39", set: "18:10" }, // 寒露
+            { rise: "06:45", set: "17:58" }, // 霜降
+            { rise: "06:50", set: "17:49" }, // 立冬
+            { rise: "06:55", set: "17:44" }, // 小雪
+            { rise: "07:00", set: "17:43" }, // 大雪
+            { rise: "07:04", set: "17:44" }  // 冬至
         ];
 
-        // 一键导入标准数据（无错误）
+        // 一键导入标准数据
         function importData() {
             clearData();
             const rh = document.querySelectorAll('.rh');
@@ -444,7 +461,7 @@
             alert("✅ 标准数据已一键导入完成！");
         }
 
-        // 单个节气核查无误：锁定该行
+        // 核查无误锁定
         function check(btn, idx) {
             if(btn.classList.contains('checked')) return;
             btn.classList.add('checked');
