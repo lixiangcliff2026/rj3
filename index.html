@@ -125,6 +125,28 @@
             display: none;
         }
 
+        .import-btn {
+            padding: 10px 24px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #e67e22;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .clear-btn {
+            padding: 10px 24px;
+            font-size: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #c0392b;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
         .chart-box {
             width: 100%;
             height: 450px;
@@ -134,7 +156,7 @@
 
         @media (max-width: 768px) {
             input { width: 40px; }
-            .main-btn, .sub-btn, .hide-btn { padding: 8px 12px; font-size: 13px; }
+            .main-btn, .sub-btn, .hide-btn, .import-btn, .clear-btn { padding: 8px 12px; font-size: 13px; }
             .chart-box { height: 380px; }
         }
     </style>
@@ -145,6 +167,13 @@
 
     <div class="container">
         <h3 class="table-title">数据录入区</h3>
+
+        <!-- 一键导入 + 一键清除 并排按钮 -->
+        <div class="btn-group">
+            <button class="import-btn" onclick="importData()">📥 一键导入标准数据</button>
+            <button class="clear-btn" onclick="clearData()">🧹 一键清除所有数据</button>
+        </div>
+
         <table class="data-table">
             <thead>
                 <tr>
@@ -270,6 +299,69 @@
         let currentType = 'scatter';
         let show = { rise: false, set: false, time: false };
 
+        // 24节气标准数据
+        const standardData = [
+            { rise: "06:59", set: "18:23" }, { rise: "06:49", set: "18:33" },
+            { rise: "06:40", set: "18:43" }, { rise: "06:28", set: "18:51" },
+            { rise: "06:15", set: "18:59" }, { rise: "06:05", set: "19:07" },
+            { rise: "06:00", set: "19:13" }, { rise: "05:57", set: "19:18" },
+            { rise: "05:57", set: "19:22" }, { rise: "05:59", set: "19:23" },
+            { rise: "06:03", set: "19:20" }, { rise: "06:09", set: "19:13" },
+            { rise: "06:15", set: "19:03" }, { rise: "06:21", set: "18:51" },
+            { rise: "06:27", set: "18:38" }, { rise: "06:33", set: "18:24" },
+            { rise: "06:39", set: "18:10" }, { rise: "06:45", set: "17:58" },
+            { rise: "06:50", set: "17:49" }, { rise: "06:55", set: "17:44" },
+            { rise: "07:00", set: "17:43" }, { rise: "07:04", set: "17:44" },
+            { rise: "07:03", set: "18:11" }, { rise: "07:05", set: "18:16" }
+        ];
+
+        // 一键导入数据
+        function importData() {
+            const rh = document.querySelectorAll('.rh');
+            const rm = document.querySelectorAll('.rm');
+            const sh = document.querySelectorAll('.sh');
+            const sm = document.querySelectorAll('.sm');
+            
+            for (let i = 0; i < 24; i++) {
+                let r = standardData[i].rise.split(':');
+                let s = standardData[i].set.split(':');
+                rh[i].value = r[0];
+                rm[i].value = r[1];
+                sh[i].value = s[0];
+                sm[i].value = s[1];
+            }
+            calcAll();
+            alert("✅ 标准数据已一键导入完成！");
+        }
+
+        // 一键清除所有数据
+        function clearData() {
+            const rh = document.querySelectorAll('.rh');
+            const rm = document.querySelectorAll('.rm');
+            const sh = document.querySelectorAll('.sh');
+            const sm = document.querySelectorAll('.sm');
+            const th = document.querySelectorAll('.th');
+            const tm = document.querySelectorAll('.tm');
+            
+            for (let i = 0; i < 24; i++) {
+                rh[i].value = "";
+                rm[i].value = "";
+                sh[i].value = "";
+                sm[i].value = "";
+                th[i].value = "";
+                tm[i].value = "";
+            }
+            
+            // 同时隐藏图表
+            show.rise = false;
+            show.set = false;
+            show.time = false;
+            redraw();
+            
+            alert("🧹 所有数据已清空！");
+        }
+
+        // 自动计算时长
         document.querySelectorAll('input').forEach(i => i.addEventListener('input', calcAll));
         function calcAll() {
             const rh = document.querySelectorAll('.rh'), rm = document.querySelectorAll('.rm');
