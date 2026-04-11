@@ -191,7 +191,7 @@
         <h3 class="table-title">数据录入区</h3>
 
         <div class="btn-group">
-            <button class="import-btn" onclick="importData()">📥 一键导入（请核对数据）</button>
+            <button class="import-btn" onclick="importData()">📥 一键导入标准数据</button>
             <button class="clear-btn" onclick="clearData()">🧹 一键清除所有数据</button>
         </div>
 
@@ -410,7 +410,7 @@
         let show = { rise: false, set: false, time: false };
 
         // 正确标准答案
-        const correctData = [
+        const standardData = [
             { rise: "06:59", set: "18:23" }, { rise: "06:49", set: "18:33" },
             { rise: "06:40", set: "18:43" }, { rise: "06:28", set: "18:51" },
             { rise: "06:15", set: "18:59" }, { rise: "06:05", set: "19:07" },
@@ -425,48 +425,23 @@
             { rise: "07:03", set: "18:11" }, { rise: "07:05", set: "18:16" }
         ];
 
-        // 随机制造 2–4 个错误
-        function generateWrongData() {
-            let errCount = Math.floor(Math.random() * 3) + 2;
-            let arr = JSON.parse(JSON.stringify(correctData));
-            let indices = Array.from({length:24},(_,i)=>i).sort(()=>Math.random()-0.5).slice(0, errCount);
-
-            indices.forEach(i => {
-                let d = arr[i];
-                let [rh, rm] = d.rise.split(':').map(Number);
-                let [sh, sm] = d.set.split(':').map(Number);
-
-                let mode = Math.random() > 0.5 ? 1 : -1;
-                rm = (rm + mode * 12 + 60) % 60;
-                rh = rh + Math.floor((rm + 60) / 60) - 1;
-                arr[i].rise = `${String(rh).padStart(2,'0')}:${String(rm).padStart(2,'0')}`;
-
-                mode = Math.random() > 0.5 ? 1 : -1;
-                sm = (sm + mode * 10 + 60) % 60;
-                sh = sh + Math.floor((sm + 60) / 60) - 1;
-                arr[i].set = `${String(sh).padStart(2,'0')}:${String(sm).padStart(2,'0')}`;
-            });
-            return arr;
-        }
-
-        // 一键导入（带随机错误）
+        // 一键导入标准数据（无错误）
         function importData() {
             clearData();
-            let data = generateWrongData();
             const rh = document.querySelectorAll('.rh');
             const rm = document.querySelectorAll('.rm');
             const sh = document.querySelectorAll('.sh');
             const sm = document.querySelectorAll('.sm');
             for (let i = 0; i < 24; i++) {
-                let r = data[i].rise.split(':');
-                let s = data[i].set.split(':');
+                let r = standardData[i].rise.split(':');
+                let s = standardData[i].set.split(':');
                 rh[i].value = r[0];
                 rm[i].value = r[1];
                 sh[i].value = s[0];
                 sm[i].value = s[1];
             }
             calcAll();
-            alert("✅ 数据已导入，请核查.");
+            alert("✅ 标准数据已一键导入完成！");
         }
 
         // 单个节气核查无误：锁定该行
